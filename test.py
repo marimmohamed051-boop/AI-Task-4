@@ -21,7 +21,7 @@ test_score = model.score(x_test ,y_test)
 st.title("Ice Cream Revenue Prediction")
 
 st.metric(label="Model Accuracy ", value=f"{test_score* 100:.2f}%")
-temperature = st.slider("Select Temperature (°C)", min_value=0.0, max_value=55.0, value=25.0)
+temperature = st.number_input("Select Temperature (°C)", min_value=0.0, max_value=55.0)
 
 input_data = pd.DataFrame({x.columns[0]: [temperature]})
 prediction = model.predict(input_data)[0]
